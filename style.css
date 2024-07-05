@@ -1,0 +1,22 @@
+h1 {
+  color: blue;
+  margin: 0 auto;
+}
+
+.div-container {
+  border: 1px black solid;
+  width: 480px;
+  height: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.grid {
+  border: 1px black solid;
+  flex: 1 1 21%;
+  margin: 1%;
+  border-radius: 8px;
+  background-color: lightblue;
+  //transition: 0.8s;
+}
