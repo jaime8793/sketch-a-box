@@ -1,7 +1,12 @@
 let gridSize = 0;
 function getGridSize() {
   // setTimeout(=>{})
-  gridSize = parseInt(prompt("Please enter number of grid boxes per side", 16));
+  gridSize = parseInt(
+    prompt("Please enter number of grid boxes per side not larger than 100", 16)
+  );
+  if (gridSize > 100) {
+    gridSize = 100;
+  }
   return gridSize;
 }
 
