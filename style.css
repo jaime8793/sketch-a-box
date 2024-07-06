@@ -1,22 +1,21 @@
 h1 {
   color: blue;
   margin: 0 auto;
+  text-align: center;
 }
 
 .div-container {
   border: 1px black solid;
-  width: 480px;
-  height: 480px;
+  width: 960px;
+  height: 960px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  background-color: black;
 }
 
 .grid {
-  border: 1px black solid;
   flex: 1 1 21%;
-  margin: 1%;
-  border-radius: 8px;
   background-color: lightblue;
-  //transition: 0.8s;
+  transition: 0.2s;
 }
