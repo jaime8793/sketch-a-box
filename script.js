@@ -1,4 +1,14 @@
-//let gridNumber = prompt("PLease enter number of grid boxes per line", 64)
+let gridNumber = prompt("PLease enter number of grid boxes per line", 64);
+function makeGridsBoxes() {
+  let parent = document.querySelector(".div-container");
+  parent.innerHTML = "";
+  for (i = 0; i < gridNumber; i++) {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("grid");
+    parent.appendChild(newDiv);
+  }
+}
+makeGridsBoxes();
 
 let gridBox = document.querySelectorAll(".grid");
 
@@ -159,9 +169,6 @@ function randomColor() {
   return number;
 }
 
-
-
-
 let startOpacity = 1;
 gridBox.forEach((grid) => {
   let startOpacity = 1;
@@ -169,9 +176,4 @@ gridBox.forEach((grid) => {
     grid.style.backgroundColor = cssColors[randomColor()];
     grid.style.opacity = startOpacity -= 0.1;
   });
-  /*grid.addEventListener("mouseout", () => {
-     grid.style.backgroundColor = "red";
-   });*/
 });
-
-
