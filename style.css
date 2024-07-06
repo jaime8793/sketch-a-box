@@ -102,9 +102,10 @@ h1 {
 }
 img {
   height: 520px;
+  margin: 0 auto;
 }
 
 button:active {
   background-color: blue;
-  transform: translate(-5%, -5%)
+  transform: translate(-5%, -5%);
 }
