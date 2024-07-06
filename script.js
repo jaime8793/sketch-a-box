@@ -1,16 +1,32 @@
-let gridNumber = prompt("PLease enter number of grid boxes per line", 64);
-function makeGridsBoxes() {
-  let parent = document.querySelector(".div-container");
+let gridSize = 0;
+function getGridSize() {
+  // setTimeout(=>{})
+  gridSize = parseInt(prompt("Please enter number of grid boxes per side", 16));
+  return gridSize;
+}
+
+const containerSize = 600; // Match this with your CSS
+
+function makeGridBoxes() {
+  const parent = document.querySelector(".div-container");
   parent.innerHTML = "";
-  for (i = 0; i < gridNumber; i++) {
+  parent.style.setProperty("--grid-size", gridSize);
+  for (let i = 0; i < gridSize * gridSize; i++) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("grid");
+    newDiv.addEventListener("mouseover", hoverGrid);
     parent.appendChild(newDiv);
   }
 }
-makeGridsBoxes();
 
-let gridBox = document.querySelectorAll(".grid");
+function hoverGrid(event) {
+  const grid = event.target;
+  grid.style.backgroundColor =
+    cssColors[Math.floor(Math.random() * cssColors.length)];
+  grid.style.opacity = Math.max(0, parseFloat(grid.style.opacity || 1) - 0.2);
+}
+
+makeGridBoxes();
 
 const cssColors = [
   "AliceBlue",
@@ -165,7 +181,7 @@ const cssColors = [
 function randomColor() {
   let number = Math.floor(Math.random() * 100);
 
-  console.log(number);
+  //console.log(number);
   return number;
 }
 
